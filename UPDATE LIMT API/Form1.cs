@@ -12,302 +12,67 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 public class Rootobject
-
 {
-
     public string type { get; set; }
-
     public string code { get; set; }
     public string description { get; set; }
-
-
-
-
-
     public Resultpay1 result { get; set; }
-
-
-
-
-
 }
+
 public class Resultpay1
-
-
-
-
-
 {
-
-
-
-
-
     public Balancelist1[] BalanceList { get; set; }
-
-
-
-
-
 }
+
 public class Balancelist1
-
-
-
-
-
 {
-
-
-
-
-
     public string limitHeader { get; set; }
-
-
-
-
-
     public Limitobject1 limitObject { get; set; }
-
-
-
-
-
 }
-
-
-
-
-
-
 
 public class Limitobject1
-
-
-
-
-
 {
-
-
-
-
-
     public Rmstemplatemap1 RMSTemplateMap { get; set; }
-
-
-
-
-
     public Rmssublimits1 RMSSubLimits { get; set; }
-
-
-
-
-
     public Marginavailable1 marginAvailable { get; set; }
-
-
-
-
-
     public string AccountID { get; set; }
-
-
-
-
-
 }
-
-
-
-
 
 public class Rmstemplatemap1
-
-
-
-
-
 {
-
-
-
-
-
     public string RMSEntityLevelId { get; set; }
-
-
-
-
-
     public int EntityType { get; set; }
-
-
-
-
-
     public string EntityId { get; set; }
-
-
-
-
-
     public int RMSSegment { get; set; }
-
-
-
-
-
     public int RMSExchange { get; set; }
-
-
-
-
-
     public int RMSProduct { get; set; }
-
-
-
-
-
     public string TemplateName { get; set; }
-
-
-
-
-
     public int EntityLimitId { get; set; }
-
-
-
-
-
     public int EntityMarginId { get; set; }
-
-
-
-
-
     public Entitylimitfieldidlist1 EntityLimitFieldIdList { get; set; }
-
-
-
-
-
     public Entitymarginfieldidlist1 EntityMarginFieldIdList { get; set; }
-
-
-
-
-
     public string CreatedBy { get; set; }
-
-
-
-
-
     public string UpdatedBy { get; set; }
-
-
-
-
-
     public DateTime CreatedOn { get; set; }
-
-
-
-
-
     public DateTime LastUpdatedOn { get; set; }
-
-
-
-
-
     public bool IsGroupWiseValidationRequired { get; set; }
-
-
-
-
-
     public string EntityKey { get; set; }
-
-
-
-
-
     public string Level { get; set; }
-
-
-
-
-
 }
+
 public class Rmssublimits1
-
-
-
-
-
 {
-
-
-
-
-
     public string cashAvailable { get; set; }
-
-
-
-
-
     public float collateral { get; set; }
-
-
-
-
-
     public string netMarginAvailable { get; set; }
-
-
-
-
-
     public string MTM { get; set; }
-
-
-
-
-
     public string UnrealizedMTM { get; set; }
-
-
-
-
-
     public string RealizedMTM { get; set; }
-
-
-
-
-
 }
-
-
-
-
-
-
 
 public class Marginavailable1
-
-
-
-
-
 {
     public string CashMarginAvailable { get; set; }
     public string AdhocMargin { get; set; }
@@ -326,17 +91,7 @@ public class Marginavailable1
     public string AdhoALL { get; set; }
 }
 
-
-
-
-
-
 public class Entitylimitfieldidlist1
-
-
-
-
-
 {
     public long CNCLimit { get; set; }
     public long GrossExpLimit { get; set; }
@@ -350,25 +105,9 @@ public class Entitylimitfieldidlist1
     public long SellExpFUTLimit { get; set; }
     public float BuyExpOPTLimit { get; set; }
     public long SellExpOTPLimit { get; set; }
-
-
-
-
-
 }
 
-
-
-
-
-
-
 public class Entitymarginfieldidlist1
-
-
-
-
-
 {
     public int CashMarginAvailable { get; set; }
     public int CashAdhocMargin { get; set; }
@@ -389,38 +128,17 @@ public class Entitymarginfieldidlist1
     public int undefined { get; set; }
 }
 
-
-
-
-
 public class Personlimit
-
-
-
-
-
 {
     public string LoginId { get; set; }
     public string ClientId { get; set; }
     public int CashMarginAvailable { get; set; }
-    //public int AdhocAll { get; set; }
     public int RMSSegment { get; set; }
     public int RMSExchange { get; set; }
     public int RMSProduct { get; set; }
 }
 
-
-
-
-
-
-
-class RMS_fieldslimit
-
-
-
-
-
+public class RMS_fieldslimit
 {
     public string LoginId { get; set; }
     public string ClientId { get; set; }
@@ -443,50 +161,17 @@ class RMS_fieldslimit
     public int RMSExchange { get; set; }
     public int RMSProduct { get; set; }
 }
+
 public class clsResult
 {
-    //public clsResult()
-    //{
-    //    this.type = "";
-    //    this.code ="";
-    //    this.description="";
-    //    this.result =new clsResultInner();
-    //}
-    //public string type { get; set; }
-    //public string code { get; set; }
-    //public string description { get; set; }
     public clsResultInner result { get; set; }
 }
 
-
-
-
-
 public class clsResultInner
-
-
-
-
-
 {
-
-
-
-
-
-    //public string UserID { get; set; }
-
-
-
-
-
     public string Token { get; set; }
-
-
-
-
-
 }
+
 namespace UPDATE_LIMT_API
 {
     public partial class Form1 : Form
@@ -497,16 +182,18 @@ namespace UPDATE_LIMT_API
         string URL_rms_fields = "https://algozy.rathi.com:3000/backofficeapi/updatermslimit/rmsfields#";
         private const string URL_Limit = "https://algozy.rathi.com:3000/backofficeapi/updatermslimit#";
         private const string DATA_limit = @"{""LoginId"": ""ADMIN2"",""ClientId"": ""TEST110"",""CashMarginAvailable"": 500 ,""RMSSegment"" : 31,""RMSExchange"" : 31,""RMSProduct"" : 63}";
+
         public Form1()
         {
             InitializeComponent();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             DataSet dsFill = new DataSet();
             SqlParameter[] _sql = new SqlParameter[0];
-            //dsFill = SqlHelper.ExecuteDataset(connrms, CommandType.StoredProcedure, "usp_limit_request_update_symphony_sayali", _sql);
             dsFill = SqlHelper.ExecuteDataset(connrms, CommandType.StoredProcedure, "usp_limit_request_update_symphony_sayali_test", _sql);
+
             if (dsFill.Tables.Count > 0)
             {
                 foreach (DataRow drLimit in dsFill.Tables[0].Rows)
@@ -516,24 +203,16 @@ namespace UPDATE_LIMT_API
                     person.LoginId = "ADMIN";
                     person.ClientId = drLimit["party_code"].ToString();
                     person.CashMarginAvailable = Convert.ToInt32(drLimit["bsense"]);
-                    //person.AdhocAll = Convert.ToInt32(drLimit["Adhoc_margin"]);
                     person.RMSSegment = 31;
                     person.RMSExchange = 31;
                     person.RMSProduct = 63;
-
-
-
-
 
                     var RMS_fields = new RMS_fieldslimit();
                     RMS_fields.LoginId = "ADMIN";
                     RMS_fields.ClientId = drLimit["party_code"].ToString();
                     RMS_fields.NotionalCash = Convert.ToInt32(drLimit["Notional_cash"]);
-                    //RMS_fields.PayInAmout = 0;
-                    //RMS_fields.PayOutAmout = 0;
                     RMS_fields.DirectCollatral = 0;
                     RMS_fields.AdhocAll = Convert.ToInt32(drLimit["Adhoc_margin"]);
-                    //RMS_fields.AdhocAll = 0;
                     RMS_fields.AdhocCashNRML = 0;
                     RMS_fields.AdhocCashMIS = 0;
                     RMS_fields.AdhocFONRML = 0;
@@ -548,14 +227,11 @@ namespace UPDATE_LIMT_API
                     RMS_fields.RMSExchange = 31;
                     RMS_fields.RMSProduct = 63;
 
-
-
-
-
                     System.Net.Http.HttpClient client = new System.Net.Http.HttpClient();
                     System.Net.Http.HttpContent content = new StringContent(DATA, UTF8Encoding.UTF8, "application/json");
                     HttpResponseMessage messge = client.PostAsync(URL, content).Result;
                     string description = string.Empty;
+
                     if (messge.IsSuccessStatusCode)
                     {
                         string description1 = string.Empty;
@@ -563,28 +239,31 @@ namespace UPDATE_LIMT_API
                         description1 = resultP;
                         clsResult cResult = JsonConvert.DeserializeObject<clsResult>(resultP);
                         client.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", cResult.result.Token);
+
                         string URL_Limit_UAT = "https://algozy.rathi.com:3000/backofficeapi/balances/getbalance?source=WEB&userID=" + clt + "&accountID=" + clt;
                         HttpResponseMessage messge1 = client.GetAsync(URL_Limit_UAT).Result;
                         string descriptionPay = string.Empty;
                         string resultPay = messge1.Content.ReadAsStringAsync().Result;
                         descriptionPay = resultPay;
                         Rootobject abs = JsonConvert.DeserializeObject<Rootobject>(descriptionPay);
+
                         foreach (var item in abs.result.BalanceList)
                         {
                             RMS_fields.PayInAmout = Convert.ToInt32(item.limitObject.marginAvailable.PayInAmount);
                             RMS_fields.PayOutAmout = Convert.ToInt32(item.limitObject.marginAvailable.PayOutAmount);
+
                             if (drLimit["Type"].ToString() == "LMT")
                             {
-                                RMS_fields.AdhocAll = Convert.ToInt32(drLimit["adhoc_margin"]); ;//+ 
-                                RMS_fields.NotionalCash = Convert.ToInt32(item.limitObject.marginAvailable.NotinalCash);// + Convert.ToInt32(drLimit["Notional_Cash"]);
-                                //RMS_fields.CashMarginAvailable = Convert.ToInt32(item.limitObject.marginAvailable.CashMarginAvailable);
+                                RMS_fields.AdhocAll = Convert.ToInt32(drLimit["adhoc_margin"]);
+                                RMS_fields.NotionalCash = Convert.ToInt32(item.limitObject.marginAvailable.NotinalCash);
                             }
                             else
                             {
-                                RMS_fields.AdhocAll = Convert.ToInt32(item.limitObject.marginAvailable.AdhocMargin); ;//+ 
+                                RMS_fields.AdhocAll = Convert.ToInt32(item.limitObject.marginAvailable.AdhocMargin);
                             }
                         }
-                        //////////////                             Updating Cash margin part
+
+                        // Updating Cash margin part
                         if (drLimit["Type"].ToString() == "INC")
                         {
                             person.LoginId = "ADMIN";
@@ -592,6 +271,7 @@ namespace UPDATE_LIMT_API
                             person.RMSSegment = 31;
                             person.RMSExchange = 31;
                             person.RMSProduct = 63;
+
                             var json = JsonConvert.SerializeObject(person);
                             var data = new StringContent(json, Encoding.UTF8, "application/json");
                             System.Net.Http.HttpClient clientlimit = new System.Net.Http.HttpClient();
@@ -599,26 +279,15 @@ namespace UPDATE_LIMT_API
                             clientlimit.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", cResult.result.Token);
                             HttpResponseMessage messgecash = clientlimit.PostAsync(URL_Limit, content1).Result;
                         }
-                        //////////////                             Updating Notional part
+
+                        // Updating Notional part
                         var jsonnotional = JsonConvert.SerializeObject(RMS_fields);
                         System.Net.Http.HttpClient clientadhoc = new System.Net.Http.HttpClient();
                         System.Net.Http.HttpContent contentadhoc = new StringContent(jsonnotional, UTF8Encoding.UTF8, "application/json");
                         clientadhoc.DefaultRequestHeaders.TryAddWithoutValidation("Authorization", cResult.result.Token);
                         HttpResponseMessage messgenotion = clientadhoc.PostAsync(URL_rms_fields, contentadhoc).Result;
                     }
-
-
-
-
-
                 }
-
-
-
-
-
-
-
             }
         }
     }
